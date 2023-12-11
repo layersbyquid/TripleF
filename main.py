@@ -20,11 +20,19 @@ class LogIn2(Screen):
 class SignUp(Screen):
     pass
 
+class Home(Screen):
+    pass
+
+class Workouts(Screen):
+    pass
+
+class Settings(Screen):
+    pass
+
 class WindowManager(ScreenManager):
     pass
 
 Builder.load_file('bg.kv')
-kv = Builder.load_file('window.kv')
 
 class MyApp(App):
     def build(self):
@@ -34,6 +42,10 @@ class MyApp(App):
         sm.add_widget(LogIn(name='li'))
         sm.add_widget(LogIn2(name='li2'))
         sm.add_widget(SignUp(name='su'))
+        sm.add_widget(Home(name='home'))
+        sm.add_widget(Workouts(name='wo'))
+        sm.add_widget(Settings(name='s'))
+
         return sm
     
     

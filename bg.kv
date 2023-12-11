@@ -17,6 +17,7 @@
             source: 'logo.png'
 
         Button:
+            background_color: (0/255, 255/255, 255/255, 1)
             text: "Get Started"
             pos_hint: {'center_x': 0.5}
             size_hint: (1, .3)
@@ -39,7 +40,7 @@
     
     BoxLayout:
         orientation: "vertical"
-        pos: 0, root.height - 550
+        pos: 0, root.height - 650
         # size: root.width, root.height
 
         # padding: 50
@@ -47,6 +48,7 @@
 
         Button:
             text: "Log In"
+            background_color: (0/255, 255/255, 255/255, 1)
             pos_hint: {'center_x': 0.5, 'center_y' : 0.5}
             size_hint: (.8, None)
             font_size: 50
@@ -56,6 +58,7 @@
 
         Button:
             pos: 0, root.height - 450
+            background_color: (0/255, 255/255, 255/255, 1)
             text: "Sign Up"
             pos_hint: {'center_x': 0.5, 'center_y' : 0.5}
             size_hint: (.8, None)
@@ -71,6 +74,18 @@
         Rectangle:
             pos: self.pos
             size: self.size
+    
+    Image:
+        source: 'back.png'
+        size_hint: (.15, .15)
+        pos_hint: {'right': 0.18, 'top' : 1}
+
+    Button:
+        size_hint: (.15, .15)
+        pos_hint: {'right': 0.18, 'top' : 1}
+        background_color: 0,0,0,0
+        on_press:
+            root.manager.current = 'li'
     
     BoxLayout:
         orientation: "vertical"
@@ -96,12 +111,13 @@
 
         Button:
             text: "Log In"
+            background_color: (0/255, 255/255, 255/255, 1)
             pos_hint: {'center_x': 0.5, 'center_y' : 0.5}
             size_hint: (.8, None)
             font_size: 50
             font_name: "Boogaloo-Regular"
             on_press: 
-                root.manager.current = 'li2'
+                root.manager.current = 'home'
 
 
 <SignUp>
@@ -111,10 +127,22 @@
         Rectangle:
             pos: self.pos
             size: self.size
+        
+    Image:
+        source: 'back.png'
+        size_hint: (.15, .15)
+        pos_hint: {'right': 0.18, 'top' : 1}
+
+    Button:
+        size_hint: (.15, .15)
+        pos_hint: {'right': 0.18, 'top' : 1}
+        background_color: 0,0,0,0
+        on_press:
+            root.manager.current = 'li'
     
     BoxLayout:
         orientation: "vertical"
-        pos: 0, root.height - 900
+        pos: 0, root.height - 950
         # size: root.width, root.height
 
         # padding: 50
@@ -149,12 +177,203 @@
             font_size: 69
 
         Button:
-            text: "Log In"
+            text: "Sign Up"
+            background_color: (0/255, 255/255, 255/255, 1)
             pos_hint: {'center_x': 0.5, 'center_y' : 0.5}
             size_hint: (.8, None)
             font_size: 50
             font_name: "Boogaloo-Regular"
             on_press: 
-                root.manager.current = 'li2'
+                root.manager.current = 'home'
 
-        
+<Home>
+    canvas.before:
+        Color:
+            rgba: (147/255,190/255,230/255,1)
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    
+            
+    Image:
+        source: 'pfp.png'
+        size_hint: (.15, .15)
+        pos_hint: {'right': 0.98, 'top' : 1}
+
+    Button:
+        size_hint: (.15, .15)
+        pos_hint: {'right': 0.98, 'top' : 1}
+        background_color: 0,0,0,0
+        on_press:
+            root.manager.current = 's'
+
+    BoxLayout:
+        orientation: "vertical"
+        pos: 0, root.height - 750
+        # size: root.width, root.height
+
+        # padding: 50
+        spacing: 125
+
+            
+
+        Button:
+            text: "Workouts"
+            background_color: (0/255, 255/255, 255/255, 1)
+            pos_hint: {'center_x': 0.5, 'center_y' : 0.5}
+            size_hint: (.8, None)
+            font_size: 50
+            font_name: "Boogaloo-Regular"
+            on_press: 
+                root.manager.current = 'wo'
+
+        Button:
+            pos: 0, root.height - 450
+            text: "Meal Prep"
+            background_color: (0/255, 255/255, 255/255, 1)
+            pos_hint: {'center_x': 0.5, 'center_y' : 0.5}
+            size_hint: (.8, None)
+            font_size: 50
+            font_name: "Boogaloo-Regular"
+
+        Button:
+            pos: 0, root.height - 450
+            text: "Calorie Check"
+            background_color: (0/255, 255/255, 255/255, 1)
+            pos_hint: {'center_x': 0.5, 'center_y' : 0.5}
+            size_hint: (.8, None)
+            font_size: 50
+            font_name: "Boogaloo-Regular"
+
+<Workouts>
+    canvas.before:
+        Color:
+            rgba: (147/255,190/255,230/255,1)
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    
+    Image:
+        source: 'home.png'
+        size_hint: (.15, .15)
+        pos_hint: {'right': 0.18, 'top' : 1}
+
+    Button:
+        size_hint: (.15, .15)
+        pos_hint: {'right': 0.18, 'top' : 1}
+        background_color: 0,0,0,0
+        on_press:
+            root.manager.current = 'home'
+    
+    BoxLayout:
+        orientation: "vertical"
+        pos: 0, root.height - 850
+        # size: root.width, root.height
+
+        # padding: 50
+        spacing: 50
+
+        Button:
+            text: "Cardio"
+            background_color: (0/255, 255/255, 255/255, 1)
+            pos_hint: {'center_x': 0.5, 'center_y' : 0.5}
+            size_hint: (.8, None)
+            font_size: 50
+            font_name: "Boogaloo-Regular"
+
+        Button:
+            pos: 0, root.height - 450
+            background_color: (0/255, 255/255, 255/255, 1)
+            text: "Upper Body"
+            pos_hint: {'center_x': 0.5, 'center_y' : 0.5}
+            size_hint: (.8, None)
+            font_size: 50
+            font_name: "Boogaloo-Regular"
+
+        Button:
+            pos: 0, root.height - 450
+            background_color: (0/255, 255/255, 255/255, 1)
+            text: "Legs"
+            pos_hint: {'center_x': 0.5, 'center_y' : 0.5}
+            size_hint: (.8, None)
+            font_size: 50
+            font_name: "Boogaloo-Regular"
+
+        Button:
+            pos: 0, root.height - 450
+            background_color: (0/255, 255/255, 255/255, 1)
+            text: "Chest"
+            pos_hint: {'center_x': 0.5, 'center_y' : 0.5}
+            size_hint: (.8, None)
+            font_size: 50
+            font_name: "Boogaloo-Regular"
+
+        Button:
+            pos: 0, root.height - 450
+            background_color: (0/255, 255/255, 255/255, 1)
+            text: "Back"
+            pos_hint: {'center_x': 0.5, 'center_y' : 0.5}
+            size_hint: (.8, None)
+            font_size: 50
+            font_name: "Boogaloo-Regular"
+
+
+<Settings>
+    canvas.before:
+        Color:
+            rgba: (147/255,190/255,230/255,1)
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    
+    Image:
+        source: 'back.png'
+        size_hint: (.15, .15)
+        pos_hint: {'right': 0.18, 'top' : 1}
+
+    Button:
+        size_hint: (.15, .15)
+        pos_hint: {'right': 0.18, 'top' : 1}
+        background_color: 0,0,0,0
+        on_press:
+            root.manager.current = 'home'       
+
+
+    BoxLayout:
+        orientation: "vertical"
+        pos: 0, root.height - 750
+        # size: root.width, root.height
+
+        # padding: 50
+        spacing: 125
+
+
+        Button:
+            text: "Profile"
+            background_color: (0/255, 255/255, 255/255, 1)
+            pos_hint: {'center_x': 0.5, 'center_y' : 0.5}
+            size_hint: (.8, None)
+            font_size: 50
+            font_name: "Boogaloo-Regular"
+
+        Button:
+            pos: 0, root.height - 450
+            background_color: (0/255, 255/255, 255/255, 1)
+            text: "Calendar"
+            pos_hint: {'center_x': 0.5, 'center_y' : 0.5}
+            size_hint: (.8, None)
+            font_size: 50
+            font_name: "Boogaloo-Regular"
+
+        Button:
+            pos: 0, root.height - 450
+            background_color: (0/255, 255/255, 255/255, 1)
+            text: "Log Out"
+            pos_hint: {'center_x': 0.5, 'center_y' : 0.5}
+            size_hint: (.8, None)
+            font_size: 50
+            font_name: "Boogaloo-Regular"
+            on_press:
+                root.manager.current = 'gs'
+
+            
