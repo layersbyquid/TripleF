@@ -17,10 +17,10 @@
             source: 'logo.png'
 
         Button:
-            background_color: (0/255, 255/255, 255/255, 1)
             text: "Get Started"
+            background_color: (0/255, 255/255, 255/255, 1)
             pos_hint: {'center_x': 0.5}
-            size_hint: (1, .3)
+            size_hint: (.8, None)
             font_size: 50
             font_name: "Boogaloo-Regular"
             on_press: 
@@ -101,6 +101,7 @@
             id: email
             hint_text:'Username:'
             font_size: 69
+            multiline: False
 
         TextInput:
             size_hint: (.8, 0)
@@ -108,6 +109,8 @@
             id: password
             hint_text:'Password:'
             font_size: 69
+            multiline: False
+            password: True
 
         Button:
             text: "Log In"
@@ -154,6 +157,7 @@
             id: email
             hint_text:'Email:'
             font_size: 69
+            multiline: False
 
         TextInput:
             size_hint: (.8, 0)
@@ -161,6 +165,7 @@
             id: password
             hint_text:'Username:'
             font_size: 69
+            multiline: False
 
         TextInput:
             size_hint: (.8, 0)
@@ -168,13 +173,17 @@
             id: password
             hint_text:'Password:'
             font_size: 69
+            multiline: False
+            password: True
         
         TextInput:
             size_hint: (.8, 0)
             pos_hint: {'center_x': 0.5, 'center_y' : 0.5}
             id: password
-            hint_text:'Confirm:'
-            font_size: 69
+            hint_text:'Confirm Password:'
+            font_size: 60
+            multiline: False
+            password: True
 
         Button:
             text: "Sign Up"
@@ -215,8 +224,6 @@
         # padding: 50
         spacing: 125
 
-            
-
         Button:
             text: "Workouts"
             background_color: (0/255, 255/255, 255/255, 1)
@@ -252,7 +259,18 @@
         Rectangle:
             pos: self.pos
             size: self.size
-    
+    Image:
+        source: 'pfp.png'
+        size_hint: (.15, .15)
+        pos_hint: {'right': 0.98, 'top' : 1}
+
+    Button:
+        size_hint: (.15, .15)
+        pos_hint: {'right': 0.98, 'top' : 1}
+        background_color: 0,0,0,0
+        on_press:
+            root.manager.current = 's'
+
     Image:
         source: 'home.png'
         size_hint: (.15, .15)
@@ -303,15 +321,6 @@
             pos: 0, root.height - 450
             background_color: (0/255, 255/255, 255/255, 1)
             text: "Chest"
-            pos_hint: {'center_x': 0.5, 'center_y' : 0.5}
-            size_hint: (.8, None)
-            font_size: 50
-            font_name: "Boogaloo-Regular"
-
-        Button:
-            pos: 0, root.height - 450
-            background_color: (0/255, 255/255, 255/255, 1)
-            text: "Back"
             pos_hint: {'center_x': 0.5, 'center_y' : 0.5}
             size_hint: (.8, None)
             font_size: 50

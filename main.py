@@ -4,9 +4,11 @@ from kivy.properties import ObjectProperty
 from kivy.lang import Builder
 from kivy.core.window import Window
 from kivy.uix.image import Image
-from kivy.uix.screenmanager import ScreenManager, Screen, NoTransition
+from kivy.uix.screenmanager import ScreenManager, Screen, SwapTransition
 from kivy.uix.textinput import TextInput
-Window.size = (720, 1280)
+Window.size = (640, 1136)
+# Window.fullscreen = 'auto'
+Window.clearcolor = (147/255,190/255,230/255,1)
 
 class GetStarted(Screen):
     pass
@@ -37,7 +39,7 @@ Builder.load_file('bg.kv')
 class MyApp(App):
     def build(self):
         self.title = 'Triple F'
-        sm = ScreenManager(transition=NoTransition())
+        sm = ScreenManager(transition=SwapTransition())
         sm.add_widget(GetStarted(name='gs'))
         sm.add_widget(LogIn(name='li'))
         sm.add_widget(LogIn2(name='li2'))
