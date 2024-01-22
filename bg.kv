@@ -98,7 +98,7 @@
         TextInput:
             size_hint: (.8, 0)
             pos_hint: {'center_x': 0.5, 'center_y' : 0.5}
-            id: email
+            id: email2
             hint_text:'Username:'
             font_size: 69
             multiline: False
@@ -145,7 +145,7 @@
     
     BoxLayout:
         orientation: "vertical"
-        pos: 0, root.height - 950
+        pos: 0, root.height - 850
         # size: root.width, root.height
 
         # padding: 50
@@ -162,10 +162,11 @@
         TextInput:
             size_hint: (.8, 0)
             pos_hint: {'center_x': 0.5, 'center_y' : 0.5}
-            id: password
+            id: username
             hint_text:'Username:'
             font_size: 69
             multiline: False
+            
 
         TextInput:
             size_hint: (.8, 0)
@@ -173,15 +174,6 @@
             id: password
             hint_text:'Password:'
             font_size: 69
-            multiline: False
-            password: True
-        
-        TextInput:
-            size_hint: (.8, 0)
-            pos_hint: {'center_x': 0.5, 'center_y' : 0.5}
-            id: password
-            hint_text:'Confirm Password:'
-            font_size: 60
             multiline: False
             password: True
 
