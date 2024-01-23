@@ -342,7 +342,7 @@
 
     BoxLayout:
         orientation: "vertical"
-        pos: 0, root.height - 750
+        pos: 0, root.height - 550
         # size: root.width, root.height
 
         # padding: 50
@@ -360,21 +360,12 @@
         Button:
             pos: 0, root.height - 450
             background_color: (0/255, 255/255, 255/255, 1)
-            text: "Calendar"
-            pos_hint: {'center_x': 0.5, 'center_y' : 0.5}
-            size_hint: (.8, None)
-            font_size: 50
-            font_name: "Boogaloo-Regular"
-
-        Button:
-            pos: 0, root.height - 450
-            background_color: (0/255, 255/255, 255/255, 1)
             text: "Log Out"
             pos_hint: {'center_x': 0.5, 'center_y' : 0.5}
             size_hint: (.8, None)
             font_size: 50
             font_name: "Boogaloo-Regular"
             on_press:
-                root.manager.current = 'gs'
+                root.manager.current = 'li'
 
             

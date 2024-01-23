@@ -6,6 +6,7 @@ from kivy.core.window import Window
 from kivy.uix.image import Image
 from kivy.uix.screenmanager import ScreenManager, Screen, SwapTransition
 from kivy.uix.textinput import TextInput
+from kivy.clock import Clock
 import csv
 import os
 
