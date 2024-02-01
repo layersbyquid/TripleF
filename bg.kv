@@ -178,6 +178,7 @@
             password: True
 
         Button:
+            id: sign_up_button
             text: "Sign Up"
             background_color: (0/255, 255/255, 255/255, 1)
             pos_hint: {'center_x': 0.5, 'center_y' : 0.5}
@@ -186,6 +187,7 @@
             font_name: "Boogaloo-Regular"
             on_press: 
                 root.manager.current = 'home'
+
 
 <Home>
     canvas.before:
@@ -277,7 +279,7 @@
     
     BoxLayout:
         orientation: "vertical"
-        pos: 0, root.height - 850
+        pos: 0, root.height - 750
         # size: root.width, root.height
 
         # padding: 50
@@ -290,6 +292,8 @@
             size_hint: (.8, None)
             font_size: 50
             font_name: "Boogaloo-Regular"
+            on_press:
+                root.manager.current = 'c'
 
         Button:
             pos: 0, root.height - 450
@@ -356,6 +360,8 @@
             size_hint: (.8, None)
             font_size: 50
             font_name: "Boogaloo-Regular"
+            on_press:
+                root.manager.current = 'p'
 
         Button:
             pos: 0, root.height - 450
@@ -368,4 +374,88 @@
             on_press:
                 root.manager.current = 'li'
 
-            
+<Profile>
+    canvas.before:
+        Color:
+            rgba: (147/255,190/255,230/255,1)
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    
+    Image:
+        source: 'back.png'
+        size_hint: (.15, .15)
+        pos_hint: {'right': 0.18, 'top' : 1}
+
+    Button:
+        size_hint: (.15, .15)
+        pos_hint: {'right': 0.18, 'top' : 1}
+        background_color: 0,0,0,0
+        on_press:
+            root.manager.current = 'home'       
+
+
+    BoxLayout:
+        orientation: "vertical"
+        pos: 0, root.height - 550
+        # size: root.width, root.height
+
+        # padding: 50
+        spacing: 125
+
+
+<Cardio>
+    canvas.before:
+        Color:
+            rgba: (147/255,190/255,230/255,1)
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    
+        Color:
+            rgba: (2/255,110/255,122/255,1)
+        Rectangle:
+            pos: (45, 720)
+            size: (550, 150)
+
+    Label:
+        id: timer_label
+        text: '00:00'
+        font_name: 'Boogaloo-Regular.ttf'
+        font_size: 130
+        pos: (5, 230)
+
+    BoxLayout:
+        orientation: "vertical"
+        pos: (120, 200)
+        pos: 0, root.height - 950
+        spacing: 50
+
+        Button:
+            background_color: (0/255, 255/255, 255/255, 1)
+            text: "Start"
+            pos_hint: {'center_x': 0.5, 'center_y' : 0.5}
+            size_hint: (.8, None)
+            font_size: 50
+            font_name: "Boogaloo-Regular"
+            on_press: root.start_timer()
+
+        Button:
+            background_color: (0/255, 255/255, 255/255, 1)
+            text: "Pause"   
+            pos_hint: {'center_x': 0.5, 'center_y' : 0.5}
+            size_hint: (.8, None)
+            font_size: 50
+            font_name: "Boogaloo-Regular"
+            on_press: root.pause_timer()
+
+        Button:
+            text: "Reset"
+            background_color: (0/255, 255/255, 255/255, 1)
+            pos_hint: {'center_x': 0.5, 'center_y' : 0.5}
+            size_hint: (.8, None)
+            font_size: 50
+            font_name: "Boogaloo-Regular"
+            on_press: root.reset_timer()
+
+
