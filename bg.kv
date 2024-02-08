@@ -1,7 +1,7 @@
 <GetStarted>
     canvas.before:
         Color:
-            rgba: (147/255,190/255,230/255,1)
+            rgba: (37/255,41/255,38/255,1)
         Rectangle:
             pos: self.pos
             size: self.size
@@ -15,6 +15,7 @@
 
         Image:
             source: 'logo.png'
+            size_hint: (1, 1)
 
         Button:
             text: "Get Started"
@@ -33,7 +34,7 @@
 <LogIn>
     canvas.before:
         Color:
-            rgba: (147/255,190/255,230/255,1)
+            rgba: (37/255,41/255,38/255,1)
         Rectangle:
             pos: self.pos
             size: self.size
@@ -70,7 +71,7 @@
 <LogIn2>
     canvas.before:
         Color:
-            rgba: (147/255,190/255,230/255,1)
+            rgba: (37/255,41/255,38/255,1)
         Rectangle:
             pos: self.pos
             size: self.size
@@ -126,7 +127,7 @@
 <SignUp>
     canvas.before:
         Color:
-            rgba: (147/255,190/255,230/255,1)
+            rgba: (37/255,41/255,38/255,1)
         Rectangle:
             pos: self.pos
             size: self.size
@@ -192,7 +193,7 @@
 <Home>
     canvas.before:
         Color:
-            rgba: (147/255,190/255,230/255,1)
+            rgba: (37/255,41/255,38/255,1)
         Rectangle:
             pos: self.pos
             size: self.size
@@ -236,6 +237,8 @@
             size_hint: (.8, None)
             font_size: 50
             font_name: "Boogaloo-Regular"
+            on_press:
+                root.manager.current = 'mp'
 
         Button:
             pos: 0, root.height - 450
@@ -249,7 +252,7 @@
 <Workouts>
     canvas.before:
         Color:
-            rgba: (147/255,190/255,230/255,1)
+            rgba: (37/255,41/255,38/255,1)
         Rectangle:
             pos: self.pos
             size: self.size
@@ -279,7 +282,7 @@
     
     BoxLayout:
         orientation: "vertical"
-        pos: 0, root.height - 750
+        pos: 0, root.height - 900
         # size: root.width, root.height
 
         # padding: 50
@@ -303,30 +306,85 @@
             size_hint: (.8, None)
             font_size: 50
             font_name: "Boogaloo-Regular"
+            on_press:
+                root.manager.current = 'ub'
 
         Button:
             pos: 0, root.height - 450
             background_color: (0/255, 255/255, 255/255, 1)
-            text: "Legs"
+            text: "Lower Body"
             pos_hint: {'center_x': 0.5, 'center_y' : 0.5}
             size_hint: (.8, None)
             font_size: 50
             font_name: "Boogaloo-Regular"
+            on_press:
+                root.manager.current = 'lb'
 
         Button:
             pos: 0, root.height - 450
             background_color: (0/255, 255/255, 255/255, 1)
-            text: "Chest"
+            text: "Core"
             pos_hint: {'center_x': 0.5, 'center_y' : 0.5}
             size_hint: (.8, None)
             font_size: 50
             font_name: "Boogaloo-Regular"
+            on_press:
+                root.manager.current = 'c'
 
+        Button:
+            pos: 0, root.height - 450
+            background_color: (0/255, 255/255, 255/255, 1)
+            text: "Full Body"
+            pos_hint: {'center_x': 0.5, 'center_y' : 0.5}
+            size_hint: (.8, None)
+            font_size: 50
+            font_name: "Boogaloo-Regular"
+            on_press:
+                root.manager.current = 'fb'
+
+<MealPrep>
+    canvas.before:
+        Color:
+            rgba: (37/255,41/255,38/255,1)
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    Image:
+        source: 'pfp.png'
+        size_hint: (.15, .15)
+        pos_hint: {'right': 0.98, 'top' : 1}
+
+    Button:
+        size_hint: (.15, .15)
+        pos_hint: {'right': 0.98, 'top' : 1}
+        background_color: 0,0,0,0
+        on_press:
+            root.manager.current = 's'
+
+    Image:
+        source: 'back.png'
+        size_hint: (.15, .15)
+        pos_hint: {'right': 0.18, 'top' : 1}
+
+    Button:
+        size_hint: (.15, .15)
+        pos_hint: {'right': 0.18, 'top' : 1}
+        background_color: 0,0,0,0
+        on_press:
+            root.manager.current = 'home'
+    
+    BoxLayout:
+        orientation: "vertical"
+        pos: 0, root.height - 750
+        # size: root.width, root.height
+
+        # padding: 50
+        spacing: 50
 
 <Settings>
     canvas.before:
         Color:
-            rgba: (147/255,190/255,230/255,1)
+            rgba: (37/255,41/255,38/255,1)
         Rectangle:
             pos: self.pos
             size: self.size
@@ -377,7 +435,7 @@
 <Profile>
     canvas.before:
         Color:
-            rgba: (147/255,190/255,230/255,1)
+            rgba: (37/255,41/255,38/255,1)
         Rectangle:
             pos: self.pos
             size: self.size
@@ -407,7 +465,7 @@
 <Cardio>
     canvas.before:
         Color:
-            rgba: (147/255,190/255,230/255,1)
+            rgba: (37/255,41/255,38/255,1)
         Rectangle:
             pos: self.pos
             size: self.size
@@ -418,12 +476,25 @@
             pos: (45, 720)
             size: (550, 150)
 
+    Image:
+        source: 'back.png'
+        size_hint: (.15, .15)
+        pos_hint: {'right': 0.18, 'top' : 1}
+
+    Button:
+        size_hint: (.15, .15)
+        pos_hint: {'right': 0.18, 'top' : 1}
+        background_color: 0,0,0,0
+        on_press:
+            root.manager.current = 'wo'
+
     Label:
         id: timer_label
         text: '00:00'
         font_name: 'Boogaloo-Regular.ttf'
+        color: (0/255, 0/255, 0/255)
         font_size: 130
-        pos: (5, 230)
+        pos: (5, 0)
 
     BoxLayout:
         orientation: "vertical"
@@ -458,4 +529,144 @@
             font_name: "Boogaloo-Regular"
             on_press: root.reset_timer()
 
+<UpperBody>
+    canvas.before:
+        Color:
+            rgba: (37/255,41/255,38/255,1)
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    
+        Color:
+            rgba: (2/255,110/255,122/255,1)
+        Rectangle:
+            pos: (45, 720)
+            size: (550, 150)
+        
+    Image:
+        source: 'back.png'
+        size_hint: (.15, .15)
+        pos_hint: {'right': 0.18, 'top' : 1}
+
+    Button:
+        size_hint: (.15, .15)
+        pos_hint: {'right': 0.18, 'top' : 1}
+        background_color: 0,0,0,0
+        on_press:
+            root.manager.current = 'wo'
+
+    Button:
+        text: "Back"
+        background_color: (0/255, 255/255, 255/255, 1)
+        pos_hint: {'center_x': 0.5, 'center_y' : 0.5}
+        size_hint: (.8, None)
+        font_size: 50
+        font_name: "Boogaloo-Regular"
+        on_press:
+            root.manager.current = 'b'
+
+    Button:
+        text: "Chest"
+        background_color: (0/255, 255/255, 255/255, 1)
+        pos_hint: {'center_x': 0.5, 'center_y' : 0.5}
+        size_hint: (.8, None)
+        font_size: 50
+        font_name: "Boogaloo-Regular"
+        on_press:
+            root.manager.current = 'ch'
+
+    Button:
+        text: "Arms"
+        background_color: (0/255, 255/255, 255/255, 1)
+        pos_hint: {'center_x': 0.5, 'center_y' : 0.5}
+        size_hint: (.8, None)
+        font_size: 50
+        font_name: "Boogaloo-Regular"
+        on_press:
+            root.manager.current = 'a'
+
+<LowerBody>
+    canvas.before:
+        Color:
+            rgba: (37/255,41/255,38/255,1)
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    
+        Color:
+            rgba: (2/255,110/255,122/255,1)
+        Rectangle:
+            pos: (45, 720)
+            size: (550, 150)
+        
+    Image:
+        source: 'back.png'
+        size_hint: (.15, .15)
+        pos_hint: {'right': 0.18, 'top' : 1}
+
+    Button:
+        size_hint: (.15, .15)
+        pos_hint: {'right': 0.18, 'top' : 1}
+        background_color: 0,0,0,0
+        on_press:
+            root.manager.current = 'wo'
+
+    Button:
+        text: "Legs"
+        background_color: (0/255, 255/255, 255/255, 1)
+        pos_hint: {'center_x': 0.5, 'center_y' : 0.5}
+        size_hint: (.8, None)
+        font_size: 50
+        font_name: "Boogaloo-Regular"
+        on_press:
+            root.manager.current = 'l'
+
+    Button:
+        text: "Glutes"
+        background_color: (0/255, 255/255, 255/255, 1)
+        pos_hint: {'center_x': 0.5, 'center_y' : 0.5}
+        size_hint: (.8, None)
+        font_size: 50
+        font_name: "Boogaloo-Regular"
+        on_press:
+            root.manager.current = 'g'
+
+
+<Core>
+    canvas.before:
+        Color:
+            rgba: (37/255,41/255,38/255,1)
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    
+        Color:
+            rgba: (2/255,110/255,122/255,1)
+        Rectangle:
+            pos: (45, 720)
+            size: (550, 150)
+        
+    Image:
+        source: 'back.png'
+        size_hint: (.15, .15)
+        pos_hint: {'right': 0.18, 'top' : 1}
+
+<FullBody>
+    canvas.before:
+        Color:
+            rgba: (37/255,41/255,38/255,1)
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    
+        Color:
+            rgba: (2/255,110/255,122/255,1)
+        Rectangle:
+            pos: (45, 720)
+            size: (550, 150)
+        
+    Image:
+        source: 'back.png'
+        size_hint: (.15, .15)
+        pos_hint: {'right': 0.18, 'top' : 1}
 

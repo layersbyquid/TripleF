@@ -13,7 +13,7 @@ import csv
 import os
 
 Window.size = (640, 1136)
-Window.clearcolor = (147/255, 190/255, 230/255, 1)
+Window.clearcolor = (37/255, 41/255, 38/255, 1)
 
 
 class GetStarted(Screen):
@@ -32,6 +32,9 @@ class Home(Screen):
     pass
 
 class Workouts(Screen):
+    pass
+
+class MealPrep(Screen):
     pass
 
 class Settings(Screen):
@@ -73,6 +76,33 @@ class Cardio(Screen):
 
         self.ids.timer_label.text = f'{minutes:02d}:{seconds:02d}'
 
+class UpperBody(Screen):
+    pass
+
+class Back(Screen):
+    pass
+
+class Chest(Screen):
+    pass
+
+class Arms(Screen):
+    pass
+        
+class LowerBody(Screen):
+    pass
+
+class Legs(Screen):
+    pass
+
+class Glutes(Screen):
+    pass
+        
+class Core(Screen):
+    pass
+
+class FullBody(Screen):
+    pass
+
 class WindowManager(ScreenManager):
     pass
 
@@ -89,9 +119,19 @@ class MyApp(App):
         sm.add_widget(SignUp(name='su'))
         sm.add_widget(Home(name='home'))
         sm.add_widget(Workouts(name='wo'))
+        sm.add_widget(MealPrep(name='mp'))
         sm.add_widget(Settings(name='s'))
         sm.add_widget(Profile(name='p'))
-        sm.add_widget(Cardio(name='c'))
+        sm.add_widget(Cardio(name='ca'))
+        sm.add_widget(UpperBody(name='ub'))
+        sm.add_widget(Back(name='b'))
+        sm.add_widget(Chest(name='ch'))
+        sm.add_widget(Arms(name='a'))
+        sm.add_widget(LowerBody(name='lb'))
+        sm.add_widget(Legs(name='l'))
+        sm.add_widget(Glutes(name='g'))
+        sm.add_widget(Core(name='c'))
+        sm.add_widget(FullBody(name='fb'))
 
         return sm
     
